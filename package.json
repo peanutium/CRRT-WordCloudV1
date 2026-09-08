@@ -1,0 +1,10 @@
+{
+  "name": "crrt-one-word-cloud",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node --check dist/app.js && node --check dist/poll-utils.js && node --test"
+  }
+}
