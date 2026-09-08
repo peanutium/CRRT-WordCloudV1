@@ -1,0 +1,17 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "polls": {
+      "crrtOneWord": {
+        "words": {
+          ".read": true,
+          "$wordId": {
+            ".write": "newData.hasChildren(['label', 'normalized', 'count']) && newData.numChildren() == 3 && newData.child('label').isString() && newData.child('label').val().length >= 1 && newData.child('label').val().length <= 32 && newData.child('normalized').isString() && newData.child('normalized').val().length >= 1 && newData.child('normalized').val().length <= 32 && newData.child('normalized').val().matches(/^[^\\s.#$\\[\\]\\/]+$/) && newData.child('count').isNumber() && ((!data.exists() && newData.child('count').val() == 1) || (data.exists() && data.child('label').val() == newData.child('label').val() && data.child('normalized').val() == newData.child('normalized').val() && data.child('count').isNumber() && newData.child('count').val() == data.child('count').val() + 1))",
+            ".validate": "newData.child('count').val() >= 1"
+          }
+        }
+      }
+    }
+  }
+}
